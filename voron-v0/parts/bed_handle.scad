@@ -6,7 +6,7 @@ tab_roof = 42;
 $fn=64;
 
 dim = [92, tab_length + 3, 30];
-difference() {
+pull_over()difference() {
     centerx(dim)sqround(dim,is_outer=true,r=2, chamfer=true);
     up(dim.z - 1)linear_extrude(4)trapezoid(tab_base, tab_roof, tab_length);
     push(tab_length/2)row(hole_spacing,n=2,center=true)union() {
